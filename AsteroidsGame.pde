@@ -2,14 +2,26 @@
 public void setup() 
 {
   //your code here
+  size (666,666);
+  background (0.6);
 }
 public void draw() 
 {
   //your code here
+  SpaceShip.show();
+  SpaceShip.move();
 }
 class SpaceShip //extends Floater  
 {   
-    //your code here
+    corners=3
+    xCorners = new int[corners];
+    yCorners = new int[corners];
+    xCorners[0] = -6;
+    yCorners[0] = -6;
+    xCorners[1] = 16;
+    yCorners[1] = 0;
+    xCorners[2] = -6;
+    yCorners[2] = 6;
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
