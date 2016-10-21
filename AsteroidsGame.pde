@@ -1,4 +1,4 @@
-//your variable declarations here
+SpaceShip cow = new SpaceShip();
 public void setup() 
 {
   //your code here
@@ -7,13 +7,13 @@ public void setup()
 }
 public void draw() 
 {
-  //your code here
+  cow.show();
 }
 class SpaceShip extends Floater  
 {   
   public void setX(int x) {myCenterX=x;}
   public int getX() {return (int)myCenterX;}
-  public void getY(int y) {myCenterY=y;}
+  public void setY(int y) {myCenterY=y;}
   public int getY() {return (int)myCenterY;}
   public void setDirectionX (double x) {myDirectionX=x;}
   public double getDirectionX() {return myDirectionX;}
@@ -21,17 +21,25 @@ class SpaceShip extends Floater
   public double getDirectionY() {return myDirectionY;}
   public void setPointDirection (int degrees) {myPointDirection = degrees;}
   public double getPointDirection() {return myPointDirection;}
+  
   SpaceShip()
   {
   corners=3;
   xCorners = new int[corners];
   yCorners = new int[corners];
   xCorners[0] = -6;
-  //yCorners[0] = -6;
-  //xCorners[1] = 16;
-  //yCorners[1] = 0;
-  //xCorners[2] = -6;
-  //yCorners[2] = 6;
+  yCorners[0] = -6;
+  xCorners[1] = 16;
+  yCorners[1] = 0;
+  xCorners[2] = -6;
+  yCorners[2] = 6;
+  myColor=0;
+  myCenterX=300;
+  myCenterY=300;
+  myDirectionX=6;
+  myDirectionY=6;
+  myPointDirection=0;
+  
   }
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
