@@ -3,11 +3,19 @@ public void setup()
 {
   //your code here
   size (666, 666);
-  background (0.6);
 }
 public void draw() 
 {
+  background (0.6);
   cow.show();
+  cow.move();
+}
+public void keyPressed()
+{
+  if (keyPressed && keyCode == 40) {cow.accelerate(-0.666);}
+  if (keyPressed && keyCode == 39) {cow.rotate(66);}
+  if (keyPressed && keyCode == 38) {cow.accelerate(0.666);}
+  if (keyPressed && keyCode == 37) {cow.rotate(-66);}
 }
 class SpaceShip extends Floater  
 {   
@@ -33,13 +41,12 @@ class SpaceShip extends Floater
   yCorners[1] = 0;
   xCorners[2] = -6;
   yCorners[2] = 6;
-  myColor=0;
-  myCenterX=300;
-  myCenterY=300;
-  myDirectionX=6;
-  myDirectionY=6;
+  myColor=255;
+  myCenterX=333;
+  myCenterY=333;
+  myDirectionX=0;
+  myDirectionY=0;
   myPointDirection=0;
-  
   }
 }
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
