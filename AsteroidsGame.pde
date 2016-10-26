@@ -1,14 +1,23 @@
 SpaceShip cow = new SpaceShip();
+Dog [] dog = new Dog [200];
 public void setup() 
 {
   //your code here
   size (666, 666);
+  for (int i = 0; i <dog.length; i++) 
+  {
+    dog [i] = new Dog();
+  }
 }
 public void draw() 
 {
   background (0.6);
   cow.show();
   cow.move();
+  for (int i = 0; i <dog.length; i++) 
+  {
+  dog[i].show();
+  }
 }
 public void keyPressed()
 {
@@ -122,4 +131,22 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     }   
     endShape(CLOSE);
   }
-} 
+}
+class Dog
+{
+  private int myX, myY;
+  public void setx (int x) {myX=x;}
+  public int getx() {return myX;}
+  public void sety (int y) {myY=y;}
+  public int gety() {return myY;}
+  public Dog()
+  {
+    myX=(int)Math.random()*666;
+    myY=(int)Math.random()*666;
+  }
+  public void show()
+  {
+    fill(255);
+    ellipse (getx(), gety(), 10,10);
+  }
+}
