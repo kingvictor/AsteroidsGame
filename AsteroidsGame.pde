@@ -22,9 +22,9 @@ public void draw()
 public void keyPressed()
 {
   if (keyPressed && keyCode == 40) {cow.accelerate(-0.666);}
-  if (keyPressed && keyCode == 39) {cow.rotate(66);}
+  if (keyPressed && keyCode == 39) {cow.rotate(6);}
   if (keyPressed && keyCode == 38) {cow.accelerate(0.666);}
-  if (keyPressed && keyCode == 37) {cow.rotate(-66);}
+  if (keyPressed && keyCode == 37) {cow.rotate(-6);}
 }
 class SpaceShip extends Floater  
 {   
@@ -45,9 +45,9 @@ class SpaceShip extends Floater
   xCorners = new int[corners];
   yCorners = new int[corners];
   xCorners[0] = -6;
-  yCorners[0] = -6;
-  xCorners[1] = 16;
-  yCorners[1] = 0;
+  yCorners[0] = -3;
+  xCorners[1] = 6;
+  yCorners[1] = 3;
   xCorners[2] = -6;
   yCorners[2] = 6;
   myColor=255;
@@ -141,12 +141,12 @@ class Dog
   public int gety() {return myY;}
   public Dog()
   {
-    myX=(int)Math.random()*666;
-    myY=(int)Math.random()*666;
+    myX=(int)(Math.random()*666);
+    myY=(int)(Math.random()*666);
   }
   public void show()
   {
     fill(255);
-    ellipse (getx(), gety(), 10,10);
+    ellipse (getx(), gety(), 1,1);
   }
 }
