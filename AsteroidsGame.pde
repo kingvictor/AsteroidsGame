@@ -45,9 +45,9 @@ class SpaceShip extends Floater
   xCorners = new int[corners];
   yCorners = new int[corners];
   xCorners[0] = -6;
-  yCorners[0] = -3;
-  xCorners[1] = 6;
-  yCorners[1] = 3;
+  yCorners[0] = -6;
+  xCorners[1] = 12;
+  yCorners[1] = 0;
   xCorners[2] = -6;
   yCorners[2] = 6;
   myColor=255;
@@ -58,6 +58,14 @@ class SpaceShip extends Floater
   myPointDirection=0;
   }
 }
+class Asteroid extends floater
+  {
+    public Asteroid()
+     {
+       corners = 6;
+       xcorners = new int [corners];
+       ycorners = new int [corners];
+       
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
   protected int corners;  //the number of corners, a triangular floater has 3   
