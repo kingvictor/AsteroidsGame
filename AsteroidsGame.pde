@@ -1,5 +1,6 @@
 SpaceShip cow = new SpaceShip();
 Dog [] dog = new Dog [200];
+Asteroid [] pig = new Asteroid [200];
 public void setup() 
 {
   //your code here
@@ -7,6 +8,10 @@ public void setup()
   for (int i = 0; i <dog.length; i++) 
   {
     dog [i] = new Dog();
+  }
+  for (int k = 0; k <pig.length; k++) 
+  {
+    pig [k] = new Asteroid();
   }
 }
 public void draw() 
@@ -17,6 +22,10 @@ public void draw()
   for (int i = 0; i <dog.length; i++) 
   {
   dog[i].show();
+  }
+    for (int k = 0; k <pig.length; k++) 
+  {
+    pig [k].show();
   }
 }
 public void keyPressed()
@@ -58,13 +67,38 @@ class SpaceShip extends Floater
   myPointDirection=0;
   }
 }
-class Asteroid extends floater
+class Asteroid extends Floater
+{   
+  public void setX(int x) {myCenterX=x;}
+  public int getX() {return (int)myCenterX;}
+  public void setY(int y) {myCenterY=y;}
+  public int getY() {return (int)myCenterY;}
+  public void setDirectionX (double x) {myDirectionX=x;}
+  public double getDirectionX() {return myDirectionX;}
+  public void setDirectionY (double y) {myDirectionY=y;}
+  public double getDirectionY() {return myDirectionY;}
+  public void setPointDirection (int degrees) {myPointDirection = degrees;}
+  public double getPointDirection() {return myPointDirection;}
+  
+  Asteroid()
   {
-    public Asteroid()
-     {
-       corners = 6;
-       xcorners = new int [corners];
-       ycorners = new int [corners];
+  corners=3;
+  xCorners = new int[corners];
+  yCorners = new int[corners];
+  xCorners[0] = -6;
+  yCorners[0] = -6;
+  xCorners[1] = 12;
+  yCorners[1] = 0;
+  xCorners[2] = -6;
+  yCorners[2] = 6;
+  myColor=255;
+  myCenterX=Math.random()*666;
+  myCenterY=Math.random()*666;
+  myDirectionX=0;
+  myDirectionY=0;
+  myPointDirection=0;
+  }
+}
        
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
 {   
