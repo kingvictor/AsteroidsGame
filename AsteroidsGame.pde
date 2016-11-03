@@ -1,6 +1,6 @@
 SpaceShip cow = new SpaceShip();
 Dog [] dog = new Dog [200];
-Asteroid [] pig = new Asteroid [200];
+Asteroid [] pig = new Asteroid [2010];
 public void setup() 
 {
   //your code here
@@ -26,6 +26,8 @@ public void draw()
     for (int k = 0; k <pig.length; k++) 
   {
     pig [k].show();
+    pig [k].move();
+    pig [k].rotate(3);
   }
 }
 public void keyPressed()
@@ -86,17 +88,17 @@ class Asteroid extends Floater
   xCorners = new int[corners];
   yCorners = new int[corners];
   xCorners[0] = -6;
-  yCorners[0] = -6;
-  xCorners[1] = 12;
+  yCorners[0] = -2;
+  xCorners[1] = -6;
   yCorners[1] = 0;
   xCorners[2] = -6;
-  yCorners[2] = 6;
+  yCorners[2] = 0;
   myColor=255;
   myCenterX=Math.random()*666;
   myCenterY=Math.random()*666;
-  myDirectionX=0;
-  myDirectionY=0;
-  myPointDirection=0;
+  myDirectionX=5;
+  myDirectionY=5;
+  myPointDirection=1;
   }
 }
        
