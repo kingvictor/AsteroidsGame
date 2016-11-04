@@ -84,22 +84,20 @@ class Asteroid extends Floater
   
   Asteroid()
   {
-  corners=4;
+  corners=3;
   xCorners = new int[corners];
   yCorners = new int[corners];
   xCorners[0] = -6;
   yCorners[0] = -6;
-  xCorners[1] = -6;
-  yCorners[1] = 6;
-  xCorners[2] = 6;
-  yCorners[2] = -6;
-  xCorners[3] = 6;
-  yCorners[3] = 6;
+  xCorners[1] = 12;
+  yCorners[1] = 0;
+  xCorners[2] = -6;
+  yCorners[2] = 6;
   myColor=255;
   myCenterX=Math.random()*666;
   myCenterY=Math.random()*666;
-  myDirectionX=Math.random()*6;
-  myDirectionY=Math.random()*6;
+  myDirectionX=Math.random()*12-6;
+  myDirectionY=Math.random()*12-6;
   myPointDirection=Math.random()*6;
   }
 }
