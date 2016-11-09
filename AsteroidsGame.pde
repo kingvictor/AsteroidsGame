@@ -1,6 +1,6 @@
 SpaceShip cow = new SpaceShip();
 Dog [] dog = new Dog [200];
-Asteroid [] pig = new Asteroid [20];
+ArrayList <Asteroid> theList = new ArrayList <Asteroid>();
 public void setup() 
 {
   //your code here
@@ -9,9 +9,9 @@ public void setup()
   {
     dog [i] = new Dog();
   }
-  for (int k = 0; k <pig.length; k++) 
+  for (int k = 0; k <10; k++) 
   {
-    pig [k] = new Asteroid();
+    theList.add(k, new Asteroid());
   }
 }
 public void draw() 
@@ -23,11 +23,11 @@ public void draw()
   {
   dog[i].show();
   }
-    for (int k = 0; k <pig.length; k++) 
+    for (int k = 0; k <10; k++) 
   {
-    pig [k].show();
-    pig [k].move();
-    pig [k].rotate(3);
+    theList.get(k).show();
+    theList.get(k).move();
+    theList.get(k).rotate(69);
   }
 }
 public void keyPressed()
