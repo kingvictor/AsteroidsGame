@@ -9,7 +9,7 @@ public void setup()
   {
     dog [i] = new Dog();
   }
-  for (int k = 0; k <10; k++) 
+  for (int k = 0; k <35; k++) 
   {
     theList.add(k, new Asteroid());
   }
@@ -23,11 +23,16 @@ public void draw()
   {
   dog[i].show();
   }
-    for (int k = 0; k <10; k++) 
+    for (int k = 0; k <theList.size(); k++) 
   {
     theList.get(k).show();
     theList.get(k).move();
-    theList.get(k).rotate(69);
+    theList.get(k).rotate(6);
+    
+    if((dist(cow.getX(),cow.getY(), theList.get(k).getX(),theList.get(k).getY()) < 20))
+    {
+      theList.remove(k);
+    }
   }
 }
 public void keyPressed()
