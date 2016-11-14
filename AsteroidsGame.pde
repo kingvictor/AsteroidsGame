@@ -28,7 +28,6 @@ public void draw()
     theList.get(k).show();
     theList.get(k).move();
     theList.get(k).rotate(6);
-    
     if((dist(cow.getX(),cow.getY(), theList.get(k).getX(),theList.get(k).getY()) < 20))
     {
       theList.remove(k);
@@ -37,10 +36,10 @@ public void draw()
 }
 public void keyPressed()
 {
-  if (keyPressed && keyCode == 40) {cow.accelerate(-0.666);}
-  if (keyPressed && keyCode == 39) {cow.rotate(6);}
-  if (keyPressed && keyCode == 38) {cow.accelerate(0.666);}
-  if (keyPressed && keyCode == 37) {cow.rotate(-6);}
+  if (keyPressed && keyCode == 40) {cow.accelerate(-0.5);}
+  if (keyPressed && keyCode == 39) {cow.rotate(5);}
+  if (keyPressed && keyCode == 38) {cow.accelerate(0.5);}
+  if (keyPressed && keyCode == 37) {cow.rotate(-5);}
 }
 class SpaceShip extends Floater  
 {   
@@ -92,15 +91,15 @@ class Asteroid extends Floater
   corners=3;
   xCorners = new int[corners];
   yCorners = new int[corners];
-  xCorners[0] = -6;
-  yCorners[0] = -6;
-  xCorners[1] = 12;
+  xCorners[0] = -5;
+  yCorners[0] = -5;
+  xCorners[1] = 10;
   yCorners[1] = 0;
-  xCorners[2] = -6;
-  yCorners[2] = 6;
+  xCorners[2] = -5;
+  yCorners[2] = 5;
   myColor=255;
-  myCenterX=Math.random()*666;
-  myCenterY=Math.random()*666;
+  myCenterX=Math.random()*500;
+  myCenterY=Math.random()*500;
   myDirectionX=Math.random()*12-6;
   myDirectionY=Math.random()*12-6;
   myPointDirection=Math.random()*6;
