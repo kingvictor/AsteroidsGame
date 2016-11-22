@@ -40,6 +40,14 @@ public void keyPressed()
   if (keyPressed && keyCode == 39) {cow.rotate(5);}
   if (keyPressed && keyCode == 38) {cow.accelerate(0.5);}
   if (keyPressed && keyCode == 37) {cow.rotate(-5);}
+  if (keyPressed && keyCode == 17)
+    {
+      cow.setX((int)(Math.random()*1000));
+      cow.setY((int)(Math.random()*1000));
+      cow.setDirectionX(0);
+      cow.setDirectionY(0);
+      cow.setPointDirection((int)(Math.random()*360));
+    }
 }
 class SpaceShip extends Floater  
 {   
