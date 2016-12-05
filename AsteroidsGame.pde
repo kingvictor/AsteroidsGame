@@ -1,6 +1,7 @@
 SpaceShip cow = new SpaceShip();
 Dog [] dog = new Dog [200];
 ArrayList <Asteroid> theList = new ArrayList <Asteroid>();
+ArrayList <Bullet> joke = new ArrayList <Bullet>();
 public void setup() 
 {
   //your code here
@@ -9,7 +10,7 @@ public void setup()
   {
     dog [i] = new Dog();
   }
-  for (int k = 0; k <35; k++) 
+  for (int k = 0; k <15; k++) 
   {
     theList.add(k, new Asteroid());
   }
@@ -23,7 +24,11 @@ public void draw()
   {
   dog[i].show();
   }
-    for (int k = 0; k <theList.size(); k++) 
+  for (int j = 0; j < joke.size(); j++)
+  {
+    joke.get(j).show();
+  }
+  for (int k = 0; k <theList.size(); k++) 
   {
     theList.get(k).show();
     theList.get(k).move();
@@ -33,6 +38,19 @@ public void draw()
       theList.remove(k);
     }
   }
+  for(int k = 0; k < theList.size(); k++)
+  {
+    for(int j = 0; j < joke.size(); j++)
+    {
+      if(dist((float)joke.get(j).getX(), (float)joke.get(j).getY(), (float)theList.get(k).getX(), (float)theList.get(k).getY()) < 20)
+      {
+        joke.remove(j);
+        theList.remove(k);
+        break;
+      }
+    }
+  }
+
 }
 public void keyPressed()
 {
@@ -42,12 +60,16 @@ public void keyPressed()
   if (keyPressed && keyCode == 37) {cow.rotate(-5);}
   if (keyPressed && keyCode == 17)
     {
-      cow.setX((int)(Math.random()*1000));
-      cow.setY((int)(Math.random()*1000));
+      cow.setX((int)(Math.random()*666));
+      cow.setY((int)(Math.random()*666));
       cow.setDirectionX(0);
       cow.setDirectionY(0);
       cow.setPointDirection((int)(Math.random()*360));
     }
+  if(keyCode == 32)
+  {
+    joke.add(new Bullet());
+  }
 }
 class SpaceShip extends Floater  
 {   
@@ -96,15 +118,21 @@ class Asteroid extends Floater
   
   Asteroid()
   {
-  corners=3;
+  corners=6;
   xCorners = new int[corners];
   yCorners = new int[corners];
-  xCorners[0] = -5;
-  yCorners[0] = -5;
-  xCorners[1] = 10;
-  yCorners[1] = 0;
-  xCorners[2] = -5;
+  xCorners[0] = -10;
+  yCorners[0] = -7;
+  xCorners[1] = (int)(Math.random()*12)+6;
+  yCorners[1] = -10;
+  xCorners[2] = (int)(Math.random()*6)+9;
   yCorners[2] = 5;
+  xCorners[3] = (int)(Math.random()*8);
+  yCorners[3] = (int)(Math.random()*7)+9;
+  xCorners[4] = -15;
+  yCorners[4] = (int)(Math.random()*8)+5;
+  xCorners[5] = -16;
+  yCorners[5] = 0;
   myColor=255;
   myCenterX=Math.random()*500;
   myCenterY=Math.random()*500;
@@ -112,6 +140,20 @@ class Asteroid extends Floater
   myDirectionY=Math.random()*12-6;
   myPointDirection=Math.random()*6;
   }
+}
+
+public class Bullet extends Floater
+{
+  public void setX(int x) {myCenterX = x;}    
+  public int getX() {return (int)myCenterX;}   
+  public void setY(int y) {myCenterY = y;}    
+  public int getY() {return (int)myCenterY;}
+  public void setDirectionX(double x) {myDirectionX = x;}
+  public double getDirectionX() {return myDirectionX;}
+  public void setDirectionY(double y) {myDirectionY = y;}
+  public double getDirectionY() {return myDirectionY;}
+  public void setPointDirection(int degrees) {myPointDirection = degrees;}
+  public double getPointDirection() {return myPointDirection;}
 }
        
 abstract class Floater //Do NOT modify the Floater class! Make changes in the SpaceShip class 
