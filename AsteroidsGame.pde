@@ -27,6 +27,7 @@ public void draw()
   for (int j = 0; j < joke.size(); j++)
   {
     joke.get(j).show();
+    joke.get(j).move();
   }
   for (int k = 0; k <theList.size(); k++) 
   {
