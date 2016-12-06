@@ -137,8 +137,8 @@ class Asteroid extends Floater
   myColor=255;
   myCenterX=Math.random()*500;
   myCenterY=Math.random()*500;
-  myDirectionX=Math.random()*8-4;
-  myDirectionY=Math.random()*8-4;
+  myDirectionX=Math.random()*2-1;
+  myDirectionY=Math.random()*2-1;
   myPointDirection=Math.random()*6;
   }
 }
